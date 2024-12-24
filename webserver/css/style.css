@@ -1,0 +1,217 @@
+:root{
+
+  /* Font Family */
+
+  --bs-font-sans-serif:"Inter", "Helvetica Neue", Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+                        "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* Font Size*/
+  --bs-font-size-base: 0.875rem;
+  --bs-font-size-1: 1rem;
+  --bs-font-size-2: 1.25rem;
+  --bs-font-size-3: 1.5rem;
+  --bs-font-size-4: 2rem;
+  --bs-font-size-5: 2.5rem;
+}
+
+body, html 
+{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  height: 100%;
+  font-family: "Open Sans", sans-serif;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+li
+{
+    list-style: none;
+}
+
+
+
+/**************** Sidebar ****************/
+
+.sidebar 
+{
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100%;
+  background: #343a40;
+  color: white;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.sidebar.show 
+{
+  left: 0; 
+}
+
+.sidebar .sidebar-brand 
+{
+  padding: 1rem;
+  display: block;
+  font-size: var(--bs-font-size-2);
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar .sidebar-nav 
+{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar .sidebar-item 
+{
+  padding: 0.75rem 1rem;
+}
+
+.sidebar .sidebar-item a 
+{
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sidebar .sidebar-item .sidebar-link span
+{
+  font-family: var(--bs-font-sans-serif);
+  font-size: var(--bs-font-size-base);
+}
+
+.sidebar .sidebar-item a:hover 
+{
+  background: #495057;
+  border-radius: 4px;
+}
+
+.bi-router-fill, .bi-stack, .bi-sliders, .bi-chat-left-dots-fill, 
+.bi-info-circle-fill, .bi-bootstrap-reboot
+{
+  font-size: var(--bs-font-size-2);
+}
+
+
+/************ Navbar **********/
+
+#navbar-content
+{
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures full screen height */
+  transition: margin-left 0.3s ease-in-out;
+}
+
+#navbar-content.shift 
+{
+  margin-left: 260px; /* Matches sidebar width */
+}
+
+.bi-justify-left
+{
+  font-size: var(--bs-font-size-4);
+  color: rgb(77, 79, 87);
+}
+
+.navbar 
+{
+  border-bottom: 0;
+  box-shadow: 0 0 2rem 0 rgba(33, 37, 41, .1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) 
+{
+  #navbar-content.shift 
+  {
+      margin-left: 0;
+  }
+
+  .sidebar 
+  {
+      left: -100%; /* Fully hide sidebar */
+  }
+
+  .sidebar.show 
+  {
+      left: 0; /* Show sidebar */
+  }
+}
+
+.content-section
+{
+  display: none; /* All sections hidden by default */
+}
+
+.content-section.active 
+{
+  display: block; /* Only the active section is visible */
+}
+
+
+/* Hide the collapsible navigation on large screens */
+@media (min-width: 992px) 
+{
+  #navbarNav 
+  {
+      display: none !important; /* Hide mobile menu on large screens */
+  }
+}
+
+/* Only show the mobile toggle button on smaller screens */
+@media (max-width: 991px) 
+{
+  .navbar-toggler 
+  {
+      display: block; /* Show the mobile toggle button */
+  }
+
+  .collapse.navbar-collapse 
+  {
+      display: none !important; /* Ensure navbar-collapse is hidden on small screens */
+  }
+
+  .navbar-collapse.show 
+  {
+      display: block !important; /* Show when toggled */
+  }
+}
+
+
+/********* Main  *******/
+
+main 
+{
+  flex: 1; /* Allows main content to grow and push the footer to the bottom */
+}
+
+.network .container-fluid 
+{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.card
+{
+  background-color: #f8f9fa;
+}
+
+/********** Footer ***********/
+
+footer 
+{
+  background-color: #f8f9fa; /* Light gray background */
+}

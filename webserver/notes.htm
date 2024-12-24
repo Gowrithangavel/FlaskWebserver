@@ -1,0 +1,51 @@
+To show the "Device Info" section automatically after a successful login
+
+
+// Simulate a login function
+function loginUser(username, password) 
+{
+    // Example check (replace with your actual login logic)
+    if (username === "admin" && password === "password") {
+        // On successful login, show Device Info section
+        showSection('deviceinfo');
+    } else {
+        alert("Login failed!");
+    }
+}
+
+// Function to hide all sections
+function hideAllSections() 
+{
+    const sections = document.querySelectorAll('.content-section');
+    sections.forEach(section => section.classList.remove('active'));
+}
+
+// Function to show the target section
+function showSection(targetId) 
+{
+    hideAllSections();  // Hide all sections
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+        targetSection.classList.add('active');  // Show the target section
+    }
+}
+
+// Event listener for login form
+document.getElementById('loginForm').addEventListener('submit', function(event) 
+{
+    event.preventDefault();  // Prevent form submission
+    
+    // Get username and password (replace with your form IDs)
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    
+    // Call login function
+    loginUser(username, password);
+});
+
+document.addEventListener('DOMContentLoaded', function () 
+{
+    // Show Device Info section on page load (if logged in)
+    showSection('deviceinfo');
+});
+

@@ -43,3 +43,8 @@ json
 curl commands:
 
 curl -X POST http://127.0.0.1:5000/loginInfo  -H "Content-Type: application/json"  -d '{"username":"admin","password":"admin"}'
+curl -X GET http://127.0.0.1:5000/scanNetworkInfo  -H "Content-Type: application/json"
+curl -X POST http://127.0.0.1:5000/wifiConfig  -H "Content-Type: application/json"  -d '{"ssid":"GSM_NET","pass":"12345678"}'
+curl -X POST http://127.0.0.1:5000/mqttInfo  -H "Content-Type: application/json"  -d '{"server":"S3.iotcompany.io","port":"1883","domain key":"ESP345","device token":"345qt"}'
+curl -X GET http://127.0.0.1:5000/deviceInfo  -H "Content-Type: application/json"
+curl -X GET http://127.0.0.1:5000/rebootInfo  -H "Content-Type: application/json"
