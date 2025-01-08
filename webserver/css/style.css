@@ -126,10 +126,21 @@ li
   color: rgb(77, 79, 87);
 }
 
+.bi-person-circle, .bi-box-arrow-right
+{
+  font-size: var(--bs-font-size-3);
+  color: rgb(77, 79, 87);
+}
+
 .navbar 
 {
   border-bottom: 0;
   box-shadow: 0 0 2rem 0 rgba(33, 37, 41, .1);
+}
+
+.setting
+{
+  width: 100%;
 }
 
 /* Responsive design */
@@ -208,6 +219,87 @@ main
 {
   background-color: #f8f9fa;
 }
+
+
+/************** Scan Network ***********/
+
+#wifiscan_response
+ {
+  background-color: #ffff;
+  border-radius: 11px;
+  margin: auto;
+  width: 693px;
+  height: 293px;
+  padding: -107px;
+  margin-top: 1%;
+  overflow-y: scroll;
+  text-align: left;
+  letter-spacing: 0.5px;
+  }
+
+/* Media Queries for different screen sizes */
+
+/* For mobile devices (up to 576px wide) */
+@media (max-width: 576px) 
+{
+  #wifiscan_response 
+  {
+    max-width: 100%;
+    padding: 10px; 
+  }
+}
+
+/* For tablets (up to 992px wide) */
+@media (max-width: 992px) 
+{
+  #wifiscan_response 
+  {
+    max-width: 600px; 
+    padding: 15px; 
+  }
+}
+
+/* For screens 1024px wide (small laptops, tablets in landscape) */
+@media (max-width: 1024px) 
+{
+  #wifiscan_response 
+  {
+    max-width: 100%; 
+    padding: 18px; 
+  }
+}
+
+/* For larger screens (1440px wide) */
+@media (min-width: 1440px) 
+{
+  #wifiscan_response 
+  {
+    max-width: 100%; 
+    padding: 25px; 
+  }
+}
+
+/* Style for created in the Javascript button */
+
+.wifi-button 
+{
+  border: none;
+  background-color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+
+/* Style for the network list & Wifiscan_Response container */
+#networkList, #wifiConfigResponse
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Center buttons horizontally */
+  justify-content: center;  /* Optionally center buttons vertically */
+}
+
 
 /********** Footer ***********/
 

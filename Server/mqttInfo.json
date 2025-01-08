@@ -1,1 +1,1 @@
-{"server": "S3.iotcompany.io",'port': '1883','domain key': 'ESP345','device token': '345qt'}
+{"Server": "gsmserver", "Port": "1234", "Username": "admin", "Password": "admin", "Client_Id": "admin234"}
